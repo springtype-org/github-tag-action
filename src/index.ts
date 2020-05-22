@@ -27,7 +27,7 @@ import {createTag} from "./function/create-tag";
         }
 
         if (mergedInput.dryRun) {
-            core.setFailed("Dry run: not performing tag action.");
+            core.warning("Dry run: not performing tag action.");
             return;
         }
         await createTag(mergedInput, version);
