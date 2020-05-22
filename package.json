@@ -5,11 +5,9 @@
   "description": "A Github Action to automatically bump and tag master, on merge, with the latest SemVer formatted version.",
   "main": "dist/action.js",
   "scripts": {
-    "prebuild": "npx st-rm-rf predist postdist dist",
-    "build": "tsc && ncc build predist/index.js -m -q -o postdist",
-    "postbuild": "npm run afterbuild",
-    "afterbuild": "mkdir dist && npx st-cp postdist/index.js  package.json dist/",
-    "postafterbuild": "npx st-rm-rf predist postdist"
+    "prebuild": "npx st-rm-rf predist dist",
+    "build": "tsc && ncc build predist/index.js -m -q",
+    "postbuild": "npx st-rm-rf predist"
   },
   "repository": {
     "type": "git",
